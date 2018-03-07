@@ -1,11 +1,8 @@
 var db = require("../models");
-var path = require("path");
+
 
 module.exports = function(app) {
-	app.get("/", function(req, res) {
-		res.sendFile(path.join(__dirname, "../public/cms.html"));
-	});
-
+	
 	app.get("/api/:category", function(req, res) {
 		res.send("Hit route /" + req.params.category);
 	});
