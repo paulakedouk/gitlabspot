@@ -5,7 +5,8 @@ $("#cms").on("submit", function() {
 	var newPost = {
 		title: title,
 		body: body,
-		category: category
+		category: category,
+		UserID: 1
 	}
 
 	$.post("/api/post", newPost, function() {
