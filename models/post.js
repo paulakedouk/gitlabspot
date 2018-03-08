@@ -16,6 +16,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       len: [1]
+    },
+    likes: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
     }
   });
 
@@ -29,12 +33,6 @@ module.exports = function(sequelize, DataTypes) {
     });
   };
 
-  Post.associate = function(models) {
-    // Associating posts with comments
-    Post.hasMany(models.Comment, {
-      onDelete: "cascade"
-    });
-  }
 
   return Post;
 };

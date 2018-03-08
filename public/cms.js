@@ -6,7 +6,7 @@ $("#cms").on("submit", function() {
 		title: title,
 		body: body,
 		category: category,
-		UserID: 1
+		UserId: 1
 	}
 
 	$.post("/api/post", newPost, function() {

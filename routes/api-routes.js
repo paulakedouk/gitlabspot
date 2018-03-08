@@ -24,7 +24,29 @@ module.exports = function(app) {
 		}).then(function(data) {
 			res.json(data)
 		})
-	})
+	});
+
+	app.put("/upvote/:id", function(req, res) {
+		db.Post.update({
+			likes: req.body.likes
+		},{
+			where: {
+				id: req.params.id
+			}
+		}).then(function(data) {
+			res.json(data);
+		})
+	});
+
+	app.put("/post/:id", function(req, res) {
+		db.Post.update(req.body, {
+			where: {
+				id: req.params.id
+			}
+		}).then(function(data) {
+			res.json(data);
+		})
+	});
 
 	app.post("/api/post", function(req, res) {
 		db.Post.create(req.body).then(function(data) {
@@ -38,7 +60,11 @@ module.exports = function(app) {
 				where: {
 					UserId: req.params.id
 				},
-				include: [db.User],
+				include: [{
+					model: db.Post
+				},{
+					model: db.Comment
+				}],
 				order: [
 					['updatedAt', 'DESC']
 				]
@@ -51,12 +77,17 @@ module.exports = function(app) {
 			res.send("Hit route /");
 		}
 	});
+
 	app.delete("/myposts/:id", function(req, res) {
-
+		db.Post.destroy({
+			where: {
+				id: req.params.id
+			}
+		}).then(function(data) {
+			res.json(data);
+		})
 	});
-	app.put("/myposts/:id", function(req, res) {
 
-	});
 	app.get("/mycomments/:id?", function(req, res) {
 		if (req.params.id) {
 
@@ -64,5 +95,5 @@ module.exports = function(app) {
 		else {
 			
 		}
-	})
+	});
 }
