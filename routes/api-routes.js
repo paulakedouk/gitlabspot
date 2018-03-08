@@ -8,7 +8,11 @@ module.exports = function(app) {
 			where: {
 				category: req.params.category
 			}, 
-			include: [db.User],
+			include: [{
+					model: db.user
+				},{
+					model: db.Comment
+				}],
 			order: [
 				["updatedAt", "DESC"]
 			]
@@ -20,7 +24,11 @@ module.exports = function(app) {
 
 	app.get("/all", function(req, res) {
 		db.Post.findAll({
-			include: [db.User],
+			include: [{
+					model: db.user
+				},{
+					model: db.Comment
+				}],
 		}).then(function(data) {
 			res.json(data)
 		})
@@ -49,7 +57,15 @@ module.exports = function(app) {
 	});
 
 	app.post("/api/post", function(req, res) {
+
 		db.Post.create(req.body).then(function(data) {
+			res.json(data)
+		})
+	});
+
+	app.post("/api/comment", function(req, res) {
+		
+		db.Comment.create(req.body).then(function(data) {
 			res.json(data)
 		})
 	});
@@ -58,10 +74,10 @@ module.exports = function(app) {
 		if (req.params.id) {
 			db.Post.findAll({
 				where: {
-					UserId: req.params.id
+					userId: req.params.id
 				},
 				include: [{
-					model: db.Post
+					model: db.user
 				},{
 					model: db.Comment
 				}],
