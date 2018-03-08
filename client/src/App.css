@@ -1,0 +1,61 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.app-login {
+  background: url(images/bcg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: table-cell;
+  vertical-align: middle;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+}
+
+.login-session {
+  width: 500px;
+  height: 30em;
+  background: white;
+  margin: 0 auto;
+}
+
+.login-session p {
+  color: lightgrey;
+  text-align: center;
+}
+
+.login-session img {
+  width: 50%;
+  margin: 0 auto;
+  display: table-cell;
+  padding: 50px 0 10px 0;
+}
+
+.login-username,
+.login-password {
+  text-align: center;
+}
+
+.login-username {
+  margin-top: 70px;
+}
+
+.login-password {
+  margin-top: 20px;
+}
+
+.login-btn {
+  float: left;
+  margin-left: 123px;
+}
+
+.sign-up-btn {
+  float: right;
+  margin-right: 123px;
+}
