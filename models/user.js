@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define("User", {
-    // Giving the User model a name of type STRING
-    name: DataTypes.STRING
-  });
-
-
-  return User;
-};
-=======
 module.exports = function(sequelize, Sequelize) {
  
     var User = sequelize.define('user', {
@@ -57,18 +46,9 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.ENUM('active', 'inactive'),
             defaultValue: 'active'
         }
- 
- 
     });
-    User.associate = function(models) {
-    // Associating User with Posts
-    // When an User is deleted, also delete any associated Posts
-    User.hasMany(models.Post, {
-      onDelete: "cascade"
-    });
-  };
  
     return User;
  
 }
->>>>>>> master
+
