@@ -44,5 +44,8 @@ module.exports = function(app) {
 	app.get("/week/week-13", function(req, res) {
 		res.sendFile(path.join(__dirname, "../public/week-13.html"));
 	});
+	app.get("/create/post", function(req, res) {
+		res.sendFile(path.join(__dirname, "../public/createform.html"));
+	});
 
 }
