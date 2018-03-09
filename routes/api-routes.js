@@ -21,6 +21,16 @@ module.exports = function(app) {
 		
 	});
 
+	// To get the current users data
+	app.get("/api/user/:username", function(req, res) {
+		db.user.findOne({
+			where: {
+				username: req.params.username
+			}
+		}).then(function(data) {
+			res.json(data)
+		})
+	})
 
 	// To view a specific post
 	app.get("/api/post/:postId", function(req, res) {
