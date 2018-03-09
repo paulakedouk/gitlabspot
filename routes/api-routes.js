@@ -42,6 +42,9 @@ module.exports = function(app) {
 			include: [{
 					model: db.Comment
 				}],
+			order: [
+				["updatedAt", "DESC"]
+			]
 		}).then(function(data) {
 			res.json(data)
 		})
@@ -151,7 +154,10 @@ module.exports = function(app) {
 			db.Comment.findAll({
 				where: {
 					username: req.body.username
-				}
+				},
+				order: [
+					["updatedAt", "DESC"]
+				]
 			})
 		}
 	});
