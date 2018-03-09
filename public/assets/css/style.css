@@ -2,6 +2,7 @@ body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
+  color: #006774;
 }
 
 a,
@@ -47,12 +48,6 @@ submit {
   min-height: 100vh;
   display: flex;
   align-items: center;
-}
-
-.form-control,
-.create-btn {
-  width: 68%;
-  margin: 0 auto;
 }
 
 .login-email,
@@ -112,6 +107,14 @@ submit {
 
 .navbar {
   background: #00bcd4;
+}
+
+.bg-dark {
+  background-color: #006774 !important;
+}
+
+.text-muted {
+  color: #00bcd4 !important;
 }
 
 .session-two {
@@ -179,4 +182,32 @@ submit {
 
 .search-box {
   padding-left: 0;
+}
+
+/* Create Post Page */
+
+.post-container h1 {
+  font-size: 26px;
+  margin: 50px 0;
+}
+
+.post-form {
+  background: #edfdff;
+  padding: 50px;
+}
+
+.post-form label {
+  float: left;
+}
+
+.form-horizontal .control-label {
+  padding-top: 7px;
+}
+.bs-example {
+  margin: 20px;
+}
+
+.create-submit {
+  width: 30%;
+  margin: 50px 0 20px 0;
 }
