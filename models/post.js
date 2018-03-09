@@ -36,9 +36,7 @@ module.exports = function(sequelize, DataTypes) {
   Post.associate = function(models) {
     // A Post has many associated comments and each comment has to have an associated post
     Post.hasMany(models.Comment, {
-      foreignKey: {
-        allowNull: false
-      }
+      onDelete: "cascade"
     })
   };
 

@@ -9,8 +9,6 @@ module.exports = function(app) {
 				category: req.params.category
 			}, 
 			include: [{
-					model: db.user
-				},{
 					model: db.Comment
 				}],
 			order: [
@@ -22,7 +20,7 @@ module.exports = function(app) {
 		
 	});
 
-	app.get("/all", function(req, res) {
+	app.get("/all/all", function(req, res) {
 		db.Post.findAll({
 			include: [{
 					model: db.Comment
