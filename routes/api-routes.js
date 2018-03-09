@@ -25,8 +25,6 @@ module.exports = function(app) {
 	app.get("/all", function(req, res) {
 		db.Post.findAll({
 			include: [{
-					model: db.user
-				},{
 					model: db.Comment
 				}],
 		}).then(function(data) {
@@ -77,7 +75,7 @@ module.exports = function(app) {
 					userId: req.params.id
 				},
 				include: [{
-					model: db.user
+					model: db.Post
 				},{
 					model: db.Comment
 				}],
