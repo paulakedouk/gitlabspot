@@ -2,8 +2,8 @@ var db = require("../models");
 var path = require("path");
 
 module.exports = function(app) {
-	app.get("/", function(req, res) {
-		res.sendFile(path.join(__dirname, "../public/index.html"));
+	app.get("/cms", function(req, res) {
+		res.sendFile(path.join(__dirname, "../public/cms.html"));
 	});
 	app.get("/week/week-1", function(req, res) {
 		res.sendFile(path.join(__dirname, "../public/week-1.html"));
