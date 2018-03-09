@@ -6,10 +6,22 @@ $("#cms").on("submit", function() {
 		title: title,
 		body: body,
 		category: category,
-		UserId: 1
+		userId: 1
 	}
 
 	$.post("/api/post", newPost, function() {
+		window.location.reload();
+	})
+})
+
+$("#cs").on("submit", function() {
+	var body = $("#comment-body").val().trim();
+	var newPost = {
+		body: body,
+		PostId: 1
+	}
+
+	$.post("/api/comment", newPost, function() {
 		window.location.reload();
 	})
 })
