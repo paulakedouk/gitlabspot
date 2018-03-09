@@ -33,8 +33,6 @@ module.exports = function(sequelize, DataTypes) {
     });
   };
 
-<<<<<<< HEAD
-=======
   Post.associate = function(models) {
     // A Post has many associated comments and each comment has to have an associated post
     Post.hasMany(models.Comment, {
@@ -42,7 +40,6 @@ module.exports = function(sequelize, DataTypes) {
     })
   };
 
->>>>>>> master
 
   return Post;
 };

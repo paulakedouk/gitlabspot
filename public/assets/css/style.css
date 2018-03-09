@@ -27,20 +27,19 @@ submit {
 }
 
 .login-form {
-  max-width: 500px;
   height: 500px;
-  background-color: white;
-  margin: 0 auto;
 }
 
-.login-form img {
+.login-form img,
+.signup-form img {
   width: 40%;
   text-align: center;
   margin: 50px auto 40px auto;
   display: block;
 }
 
-.login-form p {
+.login-form p,
+.signup-form p {
   text-align: center;
 }
 
@@ -50,16 +49,22 @@ submit {
   align-items: center;
 }
 
-.form-control {
+.form-control,
+.create-btn {
   width: 68%;
   margin: 0 auto;
 }
 
-.email {
+.login-email,
+.signup-username {
   margin-top: 50px;
 }
 
-.password {
+.login-password,
+.signup-email,
+.signup-first,
+.signup-last,
+.signup-password {
   margin-top: 20px;
 }
 
@@ -69,11 +74,23 @@ submit {
   margin-left: 75px;
 }
 
-.signin-btn {
+.signup-btn {
   float: right;
   width: 30%;
   margin-top: 0 !important;
   margin-right: 75px;
+}
+
+.signup-form,
+.login-form {
+  max-width: 500px;
+  background-color: white;
+  margin: 0 auto;
+}
+
+.create-btn {
+  margin-top: 50px;
+  margin-bottom: 70px;
 }
 
 .checkbox {
@@ -95,6 +112,10 @@ submit {
 
 .navbar {
   background: #00bcd4;
+}
+
+.list-unstyled {
+  text-align: right;
 }
 
 .logo-dashboard {
@@ -133,6 +154,7 @@ submit {
 
 #posts {
   margin-top: 20px;
+  visibility: hidden;
 }
 
 .post {
