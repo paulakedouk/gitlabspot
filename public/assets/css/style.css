@@ -1,0 +1,141 @@
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a,
+a:hover {
+  color: #00bcd4;
+}
+
+input,
+button,
+submit {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+
+.index-bcg {
+  background: url('../images/bcg.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.login-form {
+  max-width: 500px;
+  height: 500px;
+  background-color: white;
+  margin: 0 auto;
+}
+
+.login-form img {
+  width: 40%;
+  text-align: center;
+  margin: 50px auto 40px auto;
+  display: block;
+}
+
+.login-form p {
+  text-align: center;
+}
+
+.vertical-center {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.form-control {
+  width: 68%;
+  margin: 0 auto;
+}
+
+.email {
+  margin-top: 50px;
+}
+
+.password {
+  margin-top: 20px;
+}
+
+.login-btn {
+  float: left;
+  width: 30%;
+  margin-left: 75px;
+}
+
+.signin-btn {
+  float: right;
+  width: 30%;
+  margin-top: 0 !important;
+  margin-right: 75px;
+}
+
+.checkbox {
+  text-align: center;
+  width: 100%;
+  margin: 30px 0 50px 0;
+}
+
+.btn-primary {
+  background-color: #00bcd4;
+  border-color: #00bcd4;
+}
+
+/* Nav Bar */
+
+.dashboard {
+  max-width: 400px !important;
+}
+
+.navbar {
+  background: #00bcd4;
+}
+
+.logo-dashboard {
+  width: 125px;
+}
+
+.navbar-dark .navbar-toggler {
+  color: white;
+  border-color: white;
+}
+
+.months {
+  margin-top: 50px;
+}
+
+.weeks {
+  margin-top: 50px;
+}
+
+.weeks ul {
+  display: flex;
+}
+
+.weeks li {
+  width: 25%;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  background-color: #00bcd4;
+  border-right: 1px solid white;
+}
+
+.weeks li a {
+  color: white;
+}
+
+#posts {
+  margin-top: 20px;
+}
+
+.post {
+  background: #c0e6eb;
+  padding: 20px;
+}

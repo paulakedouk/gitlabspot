@@ -21,6 +21,7 @@ module.exports = function(app) {
 		
 	});
 
+
 	// To view a specific post
 	app.get("/api/post/:postId", function(req, res) {
 		db.Post.findOne({
@@ -36,7 +37,7 @@ module.exports = function(app) {
 	});
 
 	// Retrieve all posts from database
-	app.get("/api/all", function(req, res) {
+	app.get("/all/all", function(req, res) {
 		db.Post.findAll({
 			include: [{
 					model: db.Comment
@@ -90,12 +91,12 @@ module.exports = function(app) {
 	});
 
 	// Creates a comment using the information sent
-	app.post("/api/create/comment", function(req, res) {
-		
+	app.post("/api/create/comment", function(req, res) {	
 		db.Comment.create(req.body).then(function(data) {
 			res.json(data)
 		})
 	});
+
 
 	// Brings in all of a Users posts by a given userId
 	app.get("/api/myposts/:id", function(req, res) {

@@ -46,6 +46,10 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.ENUM('active', 'inactive'),
             defaultValue: 'active'
         }
+<<<<<<< HEAD
+    });
+=======
+
  
  
     });
@@ -57,7 +61,10 @@ module.exports = function(sequelize, Sequelize) {
         onDelete: "cascade"
       })
     };
+
+>>>>>>> master
  
     return User;
  
 }
+
