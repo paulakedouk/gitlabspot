@@ -112,7 +112,10 @@ submit {
 
 .navbar {
   background: #00bcd4;
-  margin-bottom: 50px;
+}
+
+.session-two {
+  margin-top: 50px;
 }
 
 .list-unstyled {
