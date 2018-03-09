@@ -104,7 +104,7 @@ submit {
   border-color: #00bcd4;
 }
 
-/* Nav Bar */
+/* Dashboard page */
 
 .dashboard {
   max-width: 400px !important;
@@ -112,6 +112,7 @@ submit {
 
 .navbar {
   background: #00bcd4;
+  margin-bottom: 50px;
 }
 
 .list-unstyled {
@@ -125,10 +126,6 @@ submit {
 .navbar-dark .navbar-toggler {
   color: white;
   border-color: white;
-}
-
-.months {
-  margin-top: 50px;
 }
 
 .weeks {
@@ -160,4 +157,23 @@ submit {
 .post {
   background: #c0e6eb;
   padding: 20px;
+}
+
+.create-post-btn {
+  background: #006774;
+  width: 52%;
+  padding: 12px 0;
+}
+
+.panel-heading {
+  margin-top: 50px;
+}
+
+.btn-secondary {
+  background-color: #006774;
+  border-color: #006774;
+}
+
+.search-box {
+  padding-left: 0;
 }
