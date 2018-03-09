@@ -12,8 +12,8 @@ $("#cms").on("submit", function() {
 	}
 
 	$.post("/api/post", newPost, function() {
-		console.log("tried to post.")
-		// window.location.reload();
+		
+		window.location.reload();
 	})
 })
 
