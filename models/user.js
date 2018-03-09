@@ -65,13 +65,3 @@ module.exports = function(sequelize, Sequelize) {
     return User;
  
 }
-
-<<<<<<< HEAD
-=======
-
-
-
-
-
-
->>>>>>> ad02b286202cdb089c7bacc6c353b7c8958ec244
