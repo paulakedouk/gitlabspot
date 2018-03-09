@@ -6,6 +6,11 @@ module.exports = function(sequelize, DataTypes) {
 			validate: {
 				len: [1]
 			}
+		},
+		username: {
+			type: DataTypes.STRING,
+		    defaultValue: "Anonymous",
+		    len: [1]
 		}
 	});
 

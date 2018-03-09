@@ -20,6 +20,11 @@ module.exports = function(sequelize, DataTypes) {
     likes: {
       type: DataTypes.INTEGER,
       defaultValue: 0
+    },
+    username: {
+      type: DataTypes.STRING,
+      defaultValue: "Anonymous",
+      len: [1]
     }
   });
 
