@@ -46,9 +46,6 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.ENUM('active', 'inactive'),
             defaultValue: 'active'
         }
-<<<<<<< HEAD
-    });
-=======
 
  
  
@@ -62,7 +59,6 @@ module.exports = function(sequelize, Sequelize) {
       })
     };
 
->>>>>>> master
  
     return User;
  

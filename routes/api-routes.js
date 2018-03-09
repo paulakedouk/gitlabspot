@@ -37,6 +37,7 @@ module.exports = function(app) {
 	});
 
 	// Retrieve all posts from database
+
 	app.get("/all/all", function(req, res) {
 		db.Post.findAll({
 			include: [{
@@ -90,12 +91,14 @@ module.exports = function(app) {
 		})
 	});
 
+
 	// Creates a comment using the information sent
 	app.post("/api/create/comment", function(req, res) {	
 		db.Comment.create(req.body).then(function(data) {
 			res.json(data)
 		})
 	});
+
 
 
 	// Brings in all of a Users posts by a given userId
