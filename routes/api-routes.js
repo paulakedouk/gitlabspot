@@ -150,7 +150,10 @@ module.exports = function(app) {
 				where: {
 					id: req.params.id,
 					username: req.body.username
-				}
+				},
+				order: [
+					["updatedAt", "DESC"]
+				]
 			})
 		}
 		else {
