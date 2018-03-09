@@ -6,6 +6,7 @@ var passport = require('passport');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var env = require('dotenv').load();
+var db = require('./models');
 //step#3
 var exphbs = require('express-handlebars');
 
@@ -15,6 +16,7 @@ var port = process.env.PORT || 8080;
 //For BodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.static('public'));
 
 // For Passport
 app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true })); // session secret
@@ -33,15 +35,8 @@ app.engine(
 app.set('view engine', '.hbs');
 
 ///////
-app.get('/', function(req, res) {
-  res.send('Welcome to Passport with Sequelize');
-});
-//Step#1
-//Next, we call the app.get() express routing function to respond with "Welcome to Passport with Sequelize" when a GET request is made to "/".
-
-//step#3
-//Models
-var models = require('./models');
+require('./routes/api-routes.js')(app);
+require('./routes/html-routes.js')(app);
 
 //step#4
 //Routes
@@ -50,19 +45,21 @@ var authRoute = require('./routes/auth.js')(app);
 var authRoute = require('./routes/auth.js')(app, passport);
 
 //load passport strategies
-require('./config/passport/passport.js')(passport, models.user);
+require('./config/passport/passport.js')(passport, db.user);
 
 //Sync Database
-models.sequelize
-  .sync()
-  .then(function() {
-    console.log('Nice! Database looks fine');
-  })
-  .catch(function(err) {
-    console.log(err, 'Something went wrong with the Database Update!');
+// models.sequelize
+//   .sync()
+//   .then(function() {
+//     console.log('Nice! Database looks fine');
+//   })
+//   .catch(function(err) {
+//     console.log(err, 'Something went wrong with the Database Update!');
+//   });
+
+db.sequelize.sync({ force: true }).then(function() {
+  app.listen(port, function() {
+    console.log('App listening on PORT ' + port);
   });
-
-//step#1
-app.listen(port, () => console.log(`Listening on port ${port}`));
-
+});
 //step#1 run node serverTest.js

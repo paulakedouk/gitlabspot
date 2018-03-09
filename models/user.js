@@ -46,7 +46,23 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.ENUM('active', 'inactive'),
             defaultValue: 'active'
         }
+<<<<<<< HEAD
     });
+=======
+
+ 
+ 
+    });
+
+    User.associate = function(models) {
+    // Associating User with Posts
+    // When an User is deleted, also delete any associated Posts
+      User.hasMany(models.Post, {
+        onDelete: "cascade"
+      })
+    };
+
+>>>>>>> master
  
     return User;
  
