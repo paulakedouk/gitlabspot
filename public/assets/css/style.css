@@ -2,6 +2,23 @@ body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
+}
+
+a,
+a:hover {
+  color: #00bcd4;
+}
+
+input,
+button,
+submit {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+
+.index-bcg {
   background: url('../images/bcg.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -34,7 +51,7 @@ body {
 }
 
 .form-control {
-  width: 50%;
+  width: 68%;
   margin: 0 auto;
 }
 
@@ -46,6 +63,19 @@ body {
   margin-top: 20px;
 }
 
+.login-btn {
+  float: left;
+  width: 30%;
+  margin-left: 75px;
+}
+
+.signin-btn {
+  float: right;
+  width: 30%;
+  margin-top: 0 !important;
+  margin-right: 75px;
+}
+
 .checkbox {
   text-align: center;
   width: 100%;
@@ -55,6 +85,57 @@ body {
 .btn-primary {
   background-color: #00bcd4;
   border-color: #00bcd4;
-  width: 50% !important;
-  margin: 0 auto !important;
+}
+
+/* Nav Bar */
+
+.dashboard {
+  max-width: 400px !important;
+}
+
+.navbar {
+  background: #00bcd4;
+}
+
+.logo-dashboard {
+  width: 125px;
+}
+
+.navbar-dark .navbar-toggler {
+  color: white;
+  border-color: white;
+}
+
+.months {
+  margin-top: 50px;
+}
+
+.weeks {
+  margin-top: 50px;
+}
+
+.weeks ul {
+  display: flex;
+}
+
+.weeks li {
+  width: 25%;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  background-color: #00bcd4;
+  border-right: 1px solid white;
+}
+
+.weeks li a {
+  color: white;
+}
+
+#posts {
+  margin-top: 20px;
+}
+
+.post {
+  background: #c0e6eb;
+  padding: 20px;
 }
