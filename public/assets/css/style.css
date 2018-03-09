@@ -2,6 +2,7 @@ body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
+  color: #006774;
 }
 
 a,
@@ -47,12 +48,6 @@ submit {
   min-height: 100vh;
   display: flex;
   align-items: center;
-}
-
-.form-control,
-.create-btn {
-  width: 68%;
-  margin: 0 auto;
 }
 
 .login-email,
@@ -104,7 +99,7 @@ submit {
   border-color: #00bcd4;
 }
 
-/* Nav Bar */
+/* Dashboard page */
 
 .dashboard {
   max-width: 400px !important;
@@ -112,6 +107,18 @@ submit {
 
 .navbar {
   background: #00bcd4;
+}
+
+.bg-dark {
+  background-color: #006774 !important;
+}
+
+.text-muted {
+  color: #00bcd4 !important;
+}
+
+.session-two {
+  margin-top: 50px;
 }
 
 .list-unstyled {
@@ -125,10 +132,6 @@ submit {
 .navbar-dark .navbar-toggler {
   color: white;
   border-color: white;
-}
-
-.months {
-  margin-top: 50px;
 }
 
 .weeks {
@@ -160,4 +163,74 @@ submit {
 .post {
   background: #c0e6eb;
   padding: 20px;
+}
+
+.create-post-btn {
+  background: #006774;
+  width: 52%;
+  padding: 12px 0;
+}
+
+.panel-heading {
+  margin-top: 50px;
+}
+
+.btn-secondary {
+  background-color: #006774;
+  border-color: #006774;
+}
+
+.search-box {
+  padding-left: 0;
+}
+
+/* Create Post Page */
+
+.post-container h1 {
+  font-size: 26px;
+  margin: 50px 0;
+}
+
+.post-form {
+  background: #edfdff;
+  padding: 50px;
+}
+
+.post-form label {
+  float: left;
+}
+
+.form-horizontal .control-label {
+  padding-top: 7px;
+}
+.bs-example {
+  margin: 20px;
+}
+
+.create-submit {
+  width: 30%;
+  margin: 50px 0 20px 0;
+}
+
+/* Post session */
+
+.post-session {
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.post-title {
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.post-date {
+  font-weight: 200;
+}
+
+.media-body h5 {
+  font-weight: 600;
+}
+.media-body p {
+  font-weight: 300;
 }
