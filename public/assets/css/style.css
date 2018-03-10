@@ -61,7 +61,8 @@ submit {
 .signup-first,
 .signup-last,
 .signup-password {
-  margin-top: 20px;
+  width: 70%;
+  margin: 20px auto;
 }
 
 .login-btn {
@@ -85,8 +86,8 @@ submit {
 }
 
 .create-btn {
-  margin-top: 50px;
-  margin-bottom: 70px;
+  width: 70%;
+  margin: 50px auto 70px auto;
 }
 
 .checkbox {
@@ -156,12 +157,13 @@ submit {
   color: white;
 }
 
-#posts {
+#categories {
   margin-top: 20px;
   visibility: hidden;
 }
 
-.post {
+.post,
+.category {
   background: #c0e6eb;
   padding: 20px;
 }
