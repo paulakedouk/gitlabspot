@@ -60,7 +60,7 @@
         <div class="container session-two">
             <div class="row">
                 <div class="col-md-6">
-                    <button class="create-post-btn" type="button">Create a new post</button>
+                    <button onclick="ascrijavpt:window.open('create-post.html', '_self')" class="create-post-btn" type="button">Create a new post</button>
                 </div>
                 <div class="col-md-6 search-box">
                     <div class="input-group">
@@ -106,11 +106,18 @@
                         <div class="weeks">
                             <ul>
                                 <li>
-                                    <button onclick="week()">Week 1</button>
+                                    <button onclick="week(1)">Week 1</button>
                                 </li>
-                                <li>Week 2</li>
-                                <li>Week 3</li>
-                                <li>Week 4</li>
+                                <li>
+                                    <button onclick="week(2)">Week 2</button>
+                                </li>
+                                <li>
+                                    <button onclick="week(3)">Week 3</button>
+                                </li>
+                                <li>
+                                    <button onclick="week(4)">Week 4</button>
+                                </li>
+
                             </ul>
                         </div>
                     </div>
@@ -142,29 +149,19 @@
                         </div>
                     </div>
                 </div>
-                <div id="categories">
-                    <div class="category">
-                        <ul>
-                            <li>
-                                <a href="categories.html">HTML</a>
-                            </li>
-                            <li>
-                                <a href="categories.html">CSS</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <div id="categories"></div>
             </div>
         </div>
 
     </div>
     <script>
-        function week() {
-            var x = document.getElementById("categories");
-            if (x.style.visibility === "visible") {
-                x.style.visibility = 'hidden';
-            } else {
-                x.style.visibility = "visible";
+        function week(weekNumber) {
+            var container = document.getElementById("categories");
+
+            if (weekNumber === 1) {
+                container.innerHTML = "<div class='category'><ul><li><a href='1-html.html'>HTML</a></li><li><a href='2-css.html'>CSS</a></li><li><a href='3-bootstrap.html'>Bootstrap</a></li></ul></div>";
+            } else if (weekNumber === 2) {
+                container.innerHTML = "<div class='category'><ul><li><a href='3-javascript.html'>JavaScript</a></li><li><a href='4-jquery.html'>jQuery</a></li></ul></div>";
             }
         }
     </script>
