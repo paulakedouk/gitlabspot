@@ -15,6 +15,8 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
     <title>GitlabSpot</title>
 </head>
 
@@ -117,34 +119,51 @@
                                 <li>
                                     <button onclick="week(4)">Week 4</button>
                                 </li>
-
                             </ul>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="month2">
                         <div class="weeks">
                             <ul>
-                                <li>Week 5</li>
-                                <li>Week 6</li>
-                                <li>Week 7</li>
-                                <li>Week 8</li>
+                                <li>
+                                    <button onclick="week(5)">Week 5</button>
+                                </li>
+                                <li>
+                                    <button onclick="week(6)">Week 6</button>
+                                </li>
+                                <li>
+                                    <button onclick="week(7)">Week 7</button>
+                                </li>
+                                <li>
+                                    <button onclick="week(8)">Week 8</button>
+                                </li>
                             </ul>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="month3">
                         <div class="weeks">
                             <ul>
-                                <li>Week 9</li>
-                                <li>Week 10</li>
-                                <li>Week 11</li>
-                                <li>Week 12</li>
+                                <li>
+                                    <button onclick="week(9)">Week 9</button>
+                                </li>
+                                <li>
+                                    <button onclick="week(10)">Week 10</button>
+                                </li>
+                                <li>
+                                    <button onclick="week(11)">Week 11</button>
+                                </li>
+                                <li>
+                                    <button onclick="week(12)">Week 12</button>
+                                </li>
                             </ul>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="month4">
                         <div class="weeks">
                             <ul>
-                                <li>Week 13</li>
+                                <li>
+                                    <button onclick="week(13)">Week 13</button>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -159,9 +178,31 @@
             var container = document.getElementById("categories");
 
             if (weekNumber === 1) {
-                container.innerHTML = "<div class='category'><ul><li><a href='1-html.html'>HTML</a></li><li><a href='2-css.html'>CSS</a></li><li><a href='3-bootstrap.html'>Bootstrap</a></li></ul></div>";
+                container.innerHTML = "<div class='category'><ul><li><a href='/categories/1-html.html'>HTML</a></li><li><a href='/categories/2-css.html'>CSS</a></li><li><a href='/categories/3-bootstrap.html'>Bootstrap</a></li></ul></div>";
             } else if (weekNumber === 2) {
-                container.innerHTML = "<div class='category'><ul><li><a href='3-javascript.html'>JavaScript</a></li><li><a href='4-jquery.html'>jQuery</a></li></ul></div>";
+                container.innerHTML = "<div class='category'><ul><li><a href='/categories/4-javascript.html'>JavaScript</a></li></ul></div>";
+            } else if (weekNumber === 3) {
+                container.innerHTML = "<div class='category'><ul><li><a href='/categories/5-jquery.html'>jQuery</a></li><li><a href='/categories/6-api.html'>API's</a></li></ul></div>";
+            } else if (weekNumber === 4) {
+                container.innerHTML = "<div class='category'><ul><li><a href='/categories/7-json.html'>JSON</a></li></ul></div>";
+            } else if (weekNumber === 5) {
+                container.innerHTML = "<div class='category'><ul><li><a href='/categories/8-ajax.html'>AJAX</a></li><li><a href='/categories/9-firebase.html'>Firebase</a></li></ul></div>";
+            } else if (weekNumber === 6) {
+                container.innerHTML = "<div class='category'><ul><li><a href='/categories/10-git.html'>Git</a></li><li><a href='/categories/11-mysql.html'>MySQL</a></li></ul></div>";
+            } else if (weekNumber === 7) {
+                container.innerHTML = "<div class='category'><ul><li><a href='/categories/11-mysql.html'>MySQL</a></li></ul></div>";
+            } else if (weekNumber === 8) {
+                container.innerHTML = "<div class='category'><ul><li><a href='/categories/12-mongodb.html'>MongoDB</a></li></ul></div>";
+            } else if (weekNumber === 9) {
+                container.innerHTML = "<div class='category'><ul><li><a href='/categories/13-mvc.html'>MVC</a></li><li><a href='/categories/14-orm.html'>ORM</a></li></ul></div>";
+            } else if (weekNumber === 10) {
+                container.innerHTML = "<div class='category'><ul><li><a href='/categories/15-sequelize.html'>Sequelize</a></li></ul></div>";
+            } else if (weekNumber === 11) {
+                container.innerHTML = "<div class='category'><ul><li><a href='/categories/16-node.html'>Node.js</a></li></ul></div>";
+            } else if (weekNumber === 12) {
+                container.innerHTML = "<div class='category'><ul><li><a href='/categories/17-express.html'>Express.js</a></li></ul></div>";
+            } else if (weekNumber === 13) {
+                container.innerHTML = "<div class='category'><ul><li><a href='/categories/18-react.html'>React</a></li></ul></div>";
             }
         }
     </script>

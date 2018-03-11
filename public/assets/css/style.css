@@ -156,13 +156,10 @@ submit {
   margin-top: 20px;
 }
 
-.post,
+.post li,
 .category li {
   background: #c0e6eb;
   padding: 20px;
-}
-
-.category li {
   margin-bottom: 10px;
 }
 
