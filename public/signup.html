@@ -47,7 +47,6 @@
         $("#sign-up").on("submit", function (event) {
             event.preventDefault();
 
-
             var username = $(".signup-username").val();
             var email = $(".signup-email").val();
             var firstname = $(".signup-first").val();
@@ -61,7 +60,7 @@
                 lastname: lastname,
                 password: password
             }
-            console.log(user)
+            // console.log(user)
 
             $.post('/signup', user, function () {
                 console.log('user: ', user)
