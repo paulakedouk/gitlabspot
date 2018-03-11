@@ -15,15 +15,20 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
     <title>GitlabSpot</title>
 </head>
 
 <body class="index-bcg">
-    <div class="container ">
+    <div class="container">
         <div class="signup">
             <div class="row vertical-center">
                 <div class="signup-form col-md-12">
                     <form class="form-signin" id="sign-up">
+                        <a href="index.html">
+                            <i class="fas fa-arrow-left" style="margin: 20px 0 0 10px;"></i>
+                        </a>
                         <img src="assets/images/logo.svg" alt="Logo">
                         <p>Welcome! Please create a new account.</p>
                         <input type="text" class="form-control signup-username" name="username" placeholder="Username" required="" autofocus="" />
@@ -37,31 +42,32 @@
                 </div>
             </div>
         </div>
-        <script>
-            $("#sign-up").on("submit", function (event) {
-                event.preventDefault();
+    </div>
+    <script>
+        $("#sign-up").on("submit", function (event) {
+            event.preventDefault();
 
 
-                var username = $(".signup-username").val();
-                var email = $(".signup-email").val();
-                var firstname = $(".signup-first").val();
-                var lastname = $(".signup-last").val();
-                var password = $(".signup-password").val();
+            var username = $(".signup-username").val();
+            var email = $(".signup-email").val();
+            var firstname = $(".signup-first").val();
+            var lastname = $(".signup-last").val();
+            var password = $(".signup-password").val();
 
-                var user = {
-                    username: username,
-                    email: email,
-                    firstname: firstname,
-                    lastname: lastname,
-                    password: password
-                }
-                console.log(user)
+            var user = {
+                username: username,
+                email: email,
+                firstname: firstname,
+                lastname: lastname,
+                password: password
+            }
+            console.log(user)
 
-                $.post('/signup', user, function () {
-                    console.log('user: ', user)
-                })
+            $.post('/signup', user, function () {
+                console.log('user: ', user)
             })
-        </script>
+        })
+    </script>
 </body>
 
 </html>
