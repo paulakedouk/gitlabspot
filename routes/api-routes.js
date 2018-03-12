@@ -1,5 +1,6 @@
 var db = require('../models');
 
+
 module.exports = function(app) {
   // Retrieve Posts from database by category
   app.get('/api/category/:category', function(req, res) {
