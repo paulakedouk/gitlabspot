@@ -10,8 +10,11 @@ var db = require('./models');
 //step#3
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 var port = process.env.PORT || 8080;
+=======
+>>>>>>> 6d0db113431f73ea45135b59d9870f55e393d233
 =======
 >>>>>>> 6d0db113431f73ea45135b59d9870f55e393d233
 

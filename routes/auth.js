@@ -4,11 +4,14 @@ var passport = require('passport');
 //added passport to the parameter(not in tutorial)
 module.exports = function (app) {
 <<<<<<< HEAD
+<<<<<<< HEAD
   app.get('/signup', authController.signup);
   app.get('/signin', authController.signin);
   // app.get('/dashboard', isLoggedIn, authController.dashboard);
   app.get('/logout', authController.logout);
 =======
+=======
+>>>>>>> 6d0db113431f73ea45135b59d9870f55e393d233
   // app.get('/signup', authController.signup);
   // app.get('/signin', authController.signin);
   // // app.get('/dashboard', isLoggedIn, authController.dashboard);
@@ -25,6 +28,7 @@ module.exports = function (app) {
   app.get("/dashboard", function (req, res) {
     res.render("dashboard")
   })
+<<<<<<< HEAD
 >>>>>>> 6d0db113431f73ea45135b59d9870f55e393d233
 
   app.get("/", function (req, res) {
@@ -40,6 +44,8 @@ module.exports = function (app) {
     }
     res.render("dashboard", hndlbObj)
   })
+=======
+>>>>>>> 6d0db113431f73ea45135b59d9870f55e393d233
 
   app.post(
     '/signup',
