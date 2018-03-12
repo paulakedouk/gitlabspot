@@ -35,7 +35,7 @@ submit {
 .signup-form img {
   width: 40%;
   text-align: center;
-  margin: 40px auto 40px auto;
+  margin: 50px auto 40px auto;
   display: block;
 }
 
@@ -96,6 +96,11 @@ submit {
   margin: 30px 0 50px 0;
 }
 
+.btn-primary {
+  background-color: #00bcd4;
+  border-color: #00bcd4;
+}
+
 /* Dashboard page */
 
 .dashboard {
@@ -154,34 +159,19 @@ submit {
 
 #categories {
   margin-top: 20px;
+  visibility: hidden;
 }
 
-.categories-btn {
-  float: right;
-  width: 100%;
-}
-
-.post li,
-.category li {
+.post,
+.category {
   background: #c0e6eb;
   padding: 20px;
-  margin-bottom: 10px;
 }
 
-.create-post-btn,
-.btn-pages {
+.create-post-btn {
   background: #006774;
   width: 52%;
   padding: 12px 0;
-  border: none;
-  border-radius: 0;
-}
-
-.btn-primary {
-  background: #00bcd4;
-  padding: 12px 0;
-  border: none;
-  border-radius: 0;
 }
 
 .panel-heading {
@@ -193,7 +183,7 @@ submit {
   border-color: #006774;
 }
 
-.categories-box {
+.search-box {
   padding-left: 0;
 }
 
@@ -225,22 +215,11 @@ submit {
   margin: 50px 0 20px 0;
 }
 
-/* Categories Page */
-
-#posts {
-  margin-top: 50px;
-}
-
 /* Post session */
 
 .post-session {
   font-weight: 400;
   line-height: 24px;
-  margin-top: 50px;
-}
-
-hr {
-  margin: 40px 0;
 }
 
 .post-title {
