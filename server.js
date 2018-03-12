@@ -9,8 +9,11 @@ var env = require('dotenv').load();
 var db = require('./models');
 //step#3
 
+<<<<<<< HEAD
 
 var port = process.env.PORT || 8080;
+=======
+>>>>>>> 6d0db113431f73ea45135b59d9870f55e393d233
 
 var port = process.env.PORT || 8080;
 
@@ -18,6 +21,7 @@ var port = process.env.PORT || 8080;
 //For BodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
 app.use(express.static('public'));
 
 // For Passport
@@ -56,6 +60,7 @@ var authRoute = require('./routes/auth.js')(app, passport);
 
 //load passport strategies
 require('./config/passport/passport.js')(passport, db.user);
+
 
 //Sync Database
 // models.sequelize
