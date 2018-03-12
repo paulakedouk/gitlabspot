@@ -1,9 +1,10 @@
 var db = require('../models');
 
+var auth = require('/auth');
 
 module.exports = function(app) {
   // Retrieve Posts from database by category
-  app.get('/api/category/:category', function(req, res) {
+  app.get('/api/category/:category', auth.isLoggedin, function(req, res) {
     db.Post.findAll({
       where: {
         category: req.params.category
@@ -20,7 +21,7 @@ module.exports = function(app) {
   });
 
   // To get the current users data
-  app.get('/api/user/:username', function(req, res) {
+  app.get('/api/user/:username', auth.isLoggedIn, function(req, res) {
     db.user
       .findOne({
         where: {
@@ -33,7 +34,7 @@ module.exports = function(app) {
   });
 
   // To view a specific post
-  app.get('/api/post/:postId', function(req, res) {
+  app.get('/api/post/:postId', auth.isLoggedIn, function(req, res) {
     db.Post.findOne({
       where: {
         id: req.params.postId
@@ -50,7 +51,7 @@ module.exports = function(app) {
 
   // Retrieve all posts from database
 
-  app.get('/all/all', function(req, res) {
+  app.get('/all/all', auth.isLoggedIn, function(req, res) {
     db.Post.findAll({
       include: [
         {
@@ -64,7 +65,7 @@ module.exports = function(app) {
   });
 
   // Updates the likes to the new value
-  app.put('/api/upvote/:postId', function(req, res) {
+  app.put('/api/upvote/:postId', auth.isLoggedIn, function(req, res) {
     db.Post.update(
       {
         likes: req.body.likes
@@ -80,7 +81,7 @@ module.exports = function(app) {
   });
 
   // Updates a specific post by id
-  app.put('/api/update/post/:id', function(req, res) {
+  app.put('/api/update/post/:id', auth.isLoggedIn, function(req, res) {
     db.Post.update(req.body, {
       where: {
         id: req.params.id
@@ -91,7 +92,7 @@ module.exports = function(app) {
   });
 
   // Updates a specific comment by id
-  app.put('/api/update/comment/:id', function(req, res) {
+  app.put('/api/update/comment/:id', auth.isLoggedIn, function(req, res) {
     db.Comment.update(req.body, {
       where: {
         id: req.params.id
@@ -102,21 +103,21 @@ module.exports = function(app) {
   });
 
   // Creates a post using the information sent
-  app.post('/api/create/post', function(req, res) {
+  app.post('/api/create/post', auth.isLoggeedIn, function(req, res) {
     db.Post.create(req.body).then(function(data) {
       res.json(data);
     });
   });
 
   // Creates a comment using the information sent
-  app.post('/api/create/comment', function(req, res) {
+  app.post('/api/create/comment', auth.isLoggedIn, function(req, res) {
     db.Comment.create(req.body).then(function(data) {
       res.json(data);
     });
   });
 
   // Brings in all of a Users posts by a given userId
-  app.get('/api/myposts/:id', function(req, res) {
+  app.get('/api/myposts/:id', auth.isLoggedIn, function(req, res) {
     db.Post.findAll({
       where: {
         userId: req.params.id
@@ -133,7 +134,7 @@ module.exports = function(app) {
   });
 
   // Deletes a specifc post by give id
-  app.delete('/myposts/delete/:postid', function(req, res) {
+  app.delete('/myposts/delete/:postid', auth.isLoggedIn, function(req, res) {
     db.Post.destroy({
       where: {
         id: req.params.postid
@@ -144,7 +145,7 @@ module.exports = function(app) {
   });
 
   //deletes a given comment by id
-  app.delete('/mycomments/delete/:commentid', function(req, res) {
+  app.delete('/mycomments/delete/:commentid', auth.IsLoggedIn, function(req, res) {
     db.Comment.destroy({
       where: {
         id: req.params.commentid
@@ -155,7 +156,7 @@ module.exports = function(app) {
   });
 
   // Brings in all of a users comments by username with the option to bring in a only one specific comment.
-  app.get('/api/mycomments/:id?', function(req, res) {
+  app.get('/api/mycomments/:id?', auth.isLoggedIn, function(req, res) {
     if (req.params.id) {
       db.Comment.findOne({
         where: {
