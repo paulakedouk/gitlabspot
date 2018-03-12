@@ -156,6 +156,11 @@ submit {
   margin-top: 20px;
 }
 
+.categories-btn {
+  float: right;
+  width: 100%;
+}
+
 .post li,
 .category li {
   background: #c0e6eb;
@@ -188,7 +193,7 @@ submit {
   border-color: #006774;
 }
 
-.search-box {
+.categories-box {
   padding-left: 0;
 }
 
