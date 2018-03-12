@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Post = sequelize.define("Post", {
+  var Post = sequelize.define('Post', {
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -23,7 +23,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     username: {
       type: DataTypes.STRING,
-      defaultValue: "Anonymous",
+      defaultValue: 'Anonymous',
       len: [1]
     }
   });
@@ -41,10 +41,9 @@ module.exports = function(sequelize, DataTypes) {
   Post.associate = function(models) {
     // A Post has many associated comments and each comment has to have an associated post
     Post.hasMany(models.Comment, {
-      onDelete: "cascade"
-    })
+      onDelete: 'cascade'
+    });
   };
-
 
   return Post;
 };
