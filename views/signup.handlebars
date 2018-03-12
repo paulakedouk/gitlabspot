@@ -3,7 +3,7 @@
         <div class="signup">
             <div class="row vertical-center">
                 <div class="signup-form col-md-12">
-                    <form class="form-signin" id="sign-up">
+                    <form class="form-signin" id="sign-up" action="/signup" method="POST">
                         <a href="index.html">
                             <i class="fas fa-arrow-left" style="margin: 20px 0 0 10px;"></i>
                         </a>
@@ -11,8 +11,8 @@
                         <p>Welcome! Please create a new account.</p>
                         <input type="text" class="form-control signup-username" name="username" placeholder="Username" required="" autofocus="" />
                         <input type="text" class="form-control signup-email" name="email" placeholder="Email Address" required="" autofocus="" />
-                        <input type="text" class="form-control signup-first" name="first" placeholder="First name" required="" autofocus="" />
-                        <input type="text" class="form-control signup-last" name="last" placeholder="Last name" required="" autofocus="" />
+                        <input type="text" class="form-control signup-first" name="firstname" placeholder="First name" required="" autofocus="" />
+                        <input type="text" class="form-control signup-last" name="lastname" placeholder="Last name" required="" autofocus="" />
                         <input type="password" class="form-control signup-password" name="password" placeholder="Password (Minimum 6 characters)"
                             required="" />
                         <button class="btn btn-lg btn-primary btn-block create-btn" type="submit">Create</button>
@@ -23,27 +23,27 @@
     </div>
 </div>
 <script>
-    $("#sign-up").on("submit", function (event) {
-        event.preventDefault();
+    // $("#sign-up").on("submit", function (event) {
+    //     //event.preventDefault();
 
-        var username = $(".signup-username").val();
-        var email = $(".signup-email").val();
-        var firstname = $(".signup-first").val();
-        var lastname = $(".signup-last").val();
-        var password = $(".signup-password").val();
+    //     var username = $(".signup-username").val();
+    //     var email = $(".signup-email").val();
+    //     var firstname = $(".signup-first").val();
+    //     var lastname = $(".signup-last").val();
+    //     var password = $(".signup-password").val();
 
-        var user = {
-            username: username,
-            email: email,
-            firstname: firstname,
-            lastname: lastname,
-            password: password
-        }
-        // console.log(user)
+    //     var user = {
+    //         username: username,
+    //         email: email,
+    //         firstname: firstname,
+    //         lastname: lastname,
+    //         password: password
+    //     }
+    //     // console.log(user)
 
-        $.post('/signup', user, function () {
-            console.log('user: ', user)
+    //     $.post('/signup', user, function () {
+    //         console.log('user: ', user)
 
-        })
-    })
+    //     })
+    // })
 </script>
