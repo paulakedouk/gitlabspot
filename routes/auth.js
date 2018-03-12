@@ -24,7 +24,8 @@ module.exports = function (app) {
   })
 
   app.get("/dashboard", isLoggedIn, function (req, res) {
-    res.render("dashboard")
+    console.log("=======================",req)
+    res.render("dashboard",{user: req.user})
   })
 
   app.post(
