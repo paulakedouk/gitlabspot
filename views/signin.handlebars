@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row vertical-center">
             <div class="login-form col-md-12">
-                <form class="form-signin">
+                <form class="form-signin" id="sign-up" action="/signin" method="POST">
                     <img src="/assets/images/logo.svg" alt="Logo">
                     <p>Welcome back! Please login to your account.</p>
                     <input type="text" class="form-control login-username" name="username" placeholder="Username" required="" autofocus="" />
@@ -11,27 +11,27 @@
                         <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
                     </label>
                     <button class="btn btn-lg btn-primary btn-block login-btn" type="submit">Login</button>
-                    <a href="signup.html" class="btn btn-lg btn-primary signup-btn">Sign up</a>
+                    <a href="signup" class="btn btn-lg btn-primary signup-btn">Sign up</a>
                 </form>
             </div>
         </div>
     </div>
 </div>
 <script>
-    $(".form-signin").on("submit", function (event) {
-        event.preventDefault();
+    // $(".form-signin").on("submit", function (event) {
+    //     event.preventDefault();
 
-        var username = $(".login-username").val();
-        var password = $(".login-password").val();
+    //     var username = $(".login-username").val();
+    //     var password = $(".login-password").val();
 
-        var user = {
-            username: username,
-            password: password
-        }
-        console.log(user)
+    //     var user = {
+    //         username: username,
+    //         password: password
+    //     }
+    //     console.log(user)
 
-        $.post('/signup', user, function () {
-            console.log('user: ', user)
-        })
-    })
+    //     $.post('/signup', user, function () {
+    //         console.log('user: ', user)
+    //     })
+    // })
 </script>
