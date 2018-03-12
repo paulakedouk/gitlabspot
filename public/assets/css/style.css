@@ -1,0 +1,260 @@
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #006774;
+}
+
+a,
+a:hover {
+  color: #00bcd4;
+}
+
+input,
+button,
+submit {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+
+.index-bcg {
+  background: url('../images/bcg.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.login-form {
+  height: 500px;
+}
+
+.login-form img,
+.signup-form img {
+  width: 40%;
+  text-align: center;
+  margin: 40px auto 40px auto;
+  display: block;
+}
+
+.login-form p,
+.signup-form p {
+  text-align: center;
+}
+
+.vertical-center {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.login-username,
+.signup-username {
+  margin: 50px auto 0;
+  width: 70%;
+}
+
+.login-password,
+.signup-email,
+.signup-first,
+.signup-last,
+.signup-password {
+  width: 70%;
+  margin: 20px auto;
+}
+
+.login-btn {
+  float: left;
+  width: 30%;
+  margin-left: 75px;
+}
+
+.signup-btn {
+  float: right;
+  width: 30%;
+  margin-top: 0 !important;
+  margin-right: 75px;
+}
+
+.signup-form,
+.login-form {
+  max-width: 500px;
+  background-color: white;
+  margin: 0 auto;
+}
+
+.create-btn {
+  width: 70%;
+  margin: 50px auto 70px auto;
+}
+
+.checkbox {
+  text-align: center;
+  width: 100%;
+  margin: 30px 0 50px 0;
+}
+
+/* Dashboard page */
+
+.dashboard {
+  max-width: 400px !important;
+}
+
+.navbar {
+  background: #00bcd4;
+}
+
+.bg-dark {
+  background-color: #006774 !important;
+}
+
+.text-muted {
+  color: #00bcd4 !important;
+}
+
+.session-two {
+  margin-top: 50px;
+}
+
+.list-unstyled {
+  text-align: right;
+}
+
+.logo-dashboard {
+  width: 125px;
+}
+
+.navbar-dark .navbar-toggler {
+  color: white;
+  border-color: white;
+}
+
+.weeks {
+  margin-top: 50px;
+}
+
+.weeks ul {
+  display: flex;
+}
+
+.weeks li {
+  width: 25%;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  background-color: #00bcd4;
+  border-right: 1px solid white;
+}
+
+.weeks li a {
+  color: white;
+}
+
+#categories {
+  margin-top: 20px;
+}
+
+.categories-btn {
+  float: right;
+  width: 100%;
+}
+
+.post li,
+.category li {
+  background: #c0e6eb;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.create-post-btn,
+.btn-pages {
+  background: #006774;
+  width: 52%;
+  padding: 12px 0;
+  border: none;
+  border-radius: 0;
+}
+
+.btn-primary {
+  background: #00bcd4;
+  padding: 12px 0;
+  border: none;
+  border-radius: 0;
+}
+
+.panel-heading {
+  margin-top: 50px;
+}
+
+.btn-secondary {
+  background-color: #006774;
+  border-color: #006774;
+}
+
+.categories-box {
+  padding-left: 0;
+}
+
+/* Create Post Page */
+
+.post-container h1 {
+  font-size: 26px;
+  margin: 50px 0;
+}
+
+.post-form {
+  background: #edfdff;
+  padding: 50px;
+}
+
+.post-form label {
+  float: left;
+}
+
+.form-horizontal .control-label {
+  padding-top: 7px;
+}
+.bs-example {
+  margin: 20px;
+}
+
+.create-submit {
+  width: 30%;
+  margin: 50px 0 20px 0;
+}
+
+/* Categories Page */
+
+#posts {
+  margin-top: 50px;
+}
+
+/* Post session */
+
+.post-session {
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 50px;
+}
+
+hr {
+  margin: 40px 0;
+}
+
+.post-title {
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.post-date {
+  font-weight: 200;
+}
+
+.media-body h5 {
+  font-weight: 600;
+}
+.media-body p {
+  font-weight: 300;
+}

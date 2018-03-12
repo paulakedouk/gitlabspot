@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Post = sequelize.define("Post", {
+  var Post = sequelize.define('Post', {
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -16,13 +16,22 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       len: [1]
+    },
+    likes: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
+    },
+    username: {
+      type: DataTypes.STRING,
+      defaultValue: 'Anonymous',
+      len: [1]
     }
   });
 
   Post.associate = function(models) {
     // A Post should belong to an User
     // A Post can't be created without an User due to the foreign key constraint
-    Post.belongsTo(models.User, {
+    Post.belongsTo(models.user, {
       foreignKey: {
         allowNull: false
       }
@@ -30,11 +39,11 @@ module.exports = function(sequelize, DataTypes) {
   };
 
   Post.associate = function(models) {
-    // Associating posts with comments
+    // A Post has many associated comments and each comment has to have an associated post
     Post.hasMany(models.Comment, {
-      onDelete: "cascade"
+      onDelete: 'cascade'
     });
-  }
+  };
 
   return Post;
 };

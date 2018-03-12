@@ -1,39 +1,48 @@
 var authController = require('../controllers/authcontroller.js');
 //added require passport(not in tutorial)
-var passport   = require('passport');
+var passport = require('passport');
 //added passport to the parameter(not in tutorial)
-module.exports = function(app) {
- 
-    app.get('/signup', authController.signup);
-    app.get('/signin', authController.signin);
-	app.get('/dashboard',isLoggedIn, authController.dashboard);    
-	app.get('/logout',authController.logout);
+module.exports = function (app) {
+  app.get('/signup', authController.signup);
+  app.get('/signin', authController.signin);
+  // app.get('/dashboard', isLoggedIn, authController.dashboard);
+  app.get('/logout', authController.logout);
 
+  app.get("/", function (req, res) {
+    hndlbObj = {
+      test: "this is a test"
+    }
+    res.render("index", hndlbObj)
+  })
 
-    app.post('/signup', passport.authenticate('local-signup', {
-	        successRedirect: '/dashboard',
-	 
-	        failureRedirect: '/signup'
-    	}
- 
-	));
+  app.get("/dashboard", function (req, res) {
+    hndlbObj = {
+      name: "Amber"
+    }
+    res.render("dashboard", hndlbObj)
+  })
 
-	app.post('/signin', passport.authenticate('local-signin', {
-	        successRedirect: '/dashboard',
-	 
-	        failureRedirect: '/signin'
-	    }
-	 
-	));
+  app.post(
+    '/signup',
+    passport.authenticate('local-signup', {
+      successRedirect: '/dashboard',
 
-	function isLoggedIn(req, res, next) {
- 
-	    if (req.isAuthenticated())
-	     
-	        return next();
-	         
-	    res.redirect('/signin');
-	 
-	}
- 
-}
+      failureRedirect: '/signup'
+    })
+  );
+
+  app.post(
+    '/signin',
+    passport.authenticate('local-signin', {
+      successRedirect: '/dashboard',
+
+      failureRedirect: '/signin'
+    })
+  );
+
+  function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) return next();
+
+    res.redirect('/signin');
+  }
+};

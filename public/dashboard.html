@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <title>GitlabSpot</title>
+</head>
+
+<body>
+    <div>
+        <div class="navbar navbar-dark box-shadow">
+            <div class="container d-flex justify-content-between">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <img class="logo-dashboard" src="assets/images/logo2.svg" alt="Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader"
+                    aria-expanded="true" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="bg-dark collapse" id="navbarHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-md-7 py-4">
+                        <h4 data-user class="text-white">User name</h4>
+                        <p class="text-muted">useremail@email.com</p>
+                        <p class="text-muted">Class: Coding Bootcamp</p>
+                    </div>
+                    <div class="col-sm-4 offset-md-1 py-4">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#" class="text-white">My favs</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-white">My comments</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-white">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container session-two">
+            <a href="../dashboard.html">
+                <i class="fas fa-arrow-left" style="margin-bottom: 50px;"></i>
+            </a>
+            <div class="row">
+                <div class="col-md-6">
+                    <button class="create-post-btn" type="button">Create a new post</button>
+                </div>
+                <div class="col-md-6 categories-box text-right">
+                    <div class="categories-btn">
+                        <button type="button" class="btn btn-pages dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Categories
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="categories/1-html.html">HTML</a>
+                            <a class="dropdown-item" href="categories/2-css.html">CSS</a>
+                            <a class="dropdown-item" href="categories/3-bootstrap.html">Bootstrap</a>
+                            <a class="dropdown-item" href="categories/4-javascript.html">JavaScript</a>
+                            <a class="dropdown-item" href="categories/5-jquery.html">jQuery</a>
+                            <a class="dropdown-item" href="categories/6-api.html">API's</a>
+                            <a class="dropdown-item" href="categories/7-json.html">JSON</a>
+                            <a class="dropdown-item" href="categories/8-ajax.html">AJAX</a>
+                            <a class="dropdown-item" href="categories/9-firebase.html">Firebase</a>
+                            <a class="dropdown-item" href="categories/10-git.html">Git</a>
+                            <a class="dropdown-item" href="categories/11-mysql.html">MySQL</a>
+                            <a class="dropdown-item" href="categories/12-mongodb.html">MongoDB</a>
+                            <a class="dropdown-item" href="categories/13-mvc.html">MVC</a>
+                            <a class="dropdown-item" href="categories/14-orm.html">ORM</a>
+                            <a class="dropdown-item" href="categories/15-sequelize.html">Sequelize</a>
+                            <a class="dropdown-item" href="categories/16-node.html">Node.js</a>
+                            <a class="dropdown-item" href="categories/17-express.html">Express.js</a>
+                            <a class="dropdown-item" href="categories/18-react.html">React.js</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container months panel with-nav-tabs panel-default">
+        <div class="panel-heading">
+            <ul class="nav nav-tabs nav-fill">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#month1" data-toggle="tab">Jan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#month2" data-toggle="tab">Fev</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#month3" data-toggle="tab">Mar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#month4" data-toggle="tab">Apr</a>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="panel-body">
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="month1">
+                    <div class="weeks">
+                        <ul>
+                            <li>
+                                <button onclick="week(1)">Week 1</button>
+                            </li>
+                            <li>
+                                <button onclick="week(2)">Week 2</button>
+                            </li>
+                            <li>
+                                <button onclick="week(3)">Week 3</button>
+                            </li>
+                            <li>
+                                <button onclick="week(4)">Week 4</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="month2">
+                    <div class="weeks">
+                        <ul>
+                            <li>
+                                <button onclick="week(5)">Week 5</button>
+                            </li>
+                            <li>
+                                <button onclick="week(6)">Week 6</button>
+                            </li>
+                            <li>
+                                <button onclick="week(7)">Week 7</button>
+                            </li>
+                            <li>
+                                <button onclick="week(8)">Week 8</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="month3">
+                    <div class="weeks">
+                        <ul>
+                            <li>
+                                <button onclick="week(9)">Week 9</button>
+                            </li>
+                            <li>
+                                <button onclick="week(10)">Week 10</button>
+                            </li>
+                            <li>
+                                <button onclick="week(11)">Week 11</button>
+                            </li>
+                            <li>
+                                <button onclick="week(12)">Week 12</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="month4">
+                    <div class="weeks">
+                        <ul>
+                            <li>
+                                <button onclick="week(13)">Week 13</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="categories"></div>
+        </div>
+    </div>
+
+    </div>
+    <script>
+        function week(weekNumber) {
+            var container = document.getElementById("categories");
+
+            if (weekNumber === 1) {
+                container.innerHTML = "<div class='category'><ul><li><a href='/categories/1-html.html'>HTML</a></li><li><a href='/categories/2-css.html'>CSS</a></li><li><a href='/categories/3-bootstrap.html'>Bootstrap</a></li></ul></div>";
+            } else if (weekNumber === 2) {
+                container.innerHTML = "<div class='category'><ul><li><a href='/categories/4-javascript.html'>JavaScript</a></li></ul></div>";
+            } else if (weekNumber === 3) {
+                container.innerHTML = "<div class='category'><ul><li><a href='/categories/5-jquery.html'>jQuery</a></li><li><a href='/categories/6-api.html'>API's</a></li></ul></div>";
+            } else if (weekNumber === 4) {
+                container.innerHTML = "<div class='category'><ul><li><a href='/categories/7-json.html'>JSON</a></li></ul></div>";
+            } else if (weekNumber === 5) {
+                container.innerHTML = "<div class='category'><ul><li><a href='/categories/8-ajax.html'>AJAX</a></li><li><a href='/categories/9-firebase.html'>Firebase</a></li></ul></div>";
+            } else if (weekNumber === 6) {
+                container.innerHTML = "<div class='category'><ul><li><a href='/categories/10-git.html'>Git</a></li><li><a href='/categories/11-mysql.html'>MySQL</a></li></ul></div>";
+            } else if (weekNumber === 7) {
+                container.innerHTML = "<div class='category'><ul><li><a href='/categories/11-mysql.html'>MySQL</a></li></ul></div>";
+            } else if (weekNumber === 8) {
+                container.innerHTML = "<div class='category'><ul><li><a href='/categories/12-mongodb.html'>MongoDB</a></li></ul></div>";
+            } else if (weekNumber === 9) {
+                container.innerHTML = "<div class='category'><ul><li><a href='/categories/13-mvc.html'>MVC</a></li><li><a href='/categories/14-orm.html'>ORM</a></li></ul></div>";
+            } else if (weekNumber === 10) {
+                container.innerHTML = "<div class='category'><ul><li><a href='/categories/15-sequelize.html'>Sequelize</a></li></ul></div>";
+            } else if (weekNumber === 11) {
+                container.innerHTML = "<div class='category'><ul><li><a href='/categories/16-node.html'>Node.js</a></li></ul></div>";
+            } else if (weekNumber === 12) {
+                container.innerHTML = "<div class='category'><ul><li><a href='/categories/17-express.html'>Express.js</a></li></ul></div>";
+            } else if (weekNumber === 13) {
+                container.innerHTML = "<div class='category'><ul><li><a href='/categories/18-react.html'>React</a></li></ul></div>";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
