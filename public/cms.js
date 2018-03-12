@@ -1,4 +1,4 @@
-$("#cms").on("submit", function() {
+$("#cms").on("submit", function () {
 	var title = $("#title").val().trim();
 	var body = $("#body").val().trim();
 	var category = $("#category").val().trim();
@@ -9,19 +9,19 @@ $("#cms").on("submit", function() {
 		userId: 1
 	}
 
-	$.post("/api/post", newPost, function() {
+	$.post("/api/post", newPost, function () {
 		window.location.reload();
 	})
 })
 
-$("#cs").on("submit", function() {
+$("#cs").on("submit", function () {
 	var body = $("#comment-body").val().trim();
 	var newPost = {
 		body: body,
 		PostId: 1
 	}
 
-	$.post("/api/comment", newPost, function() {
+	$.post("/api/comment", newPost, function () {
 		window.location.reload();
 	})
 })

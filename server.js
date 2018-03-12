@@ -12,6 +12,8 @@ var db = require('./models');
 
 var port = process.env.PORT || 8080;
 
+var port = process.env.PORT || 8080;
+
 //#step#2
 //For BodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -35,7 +37,7 @@ app.use(passport.session()); // persistent login sessions
 
 var exphbs = require('express-handlebars');
 app.engine('handlebars', exphbs({
-    defaultLayout: 'main'
+  defaultLayout: 'main'
 }));
 app.set('view engine', 'handlebars');
 
@@ -54,7 +56,6 @@ var authRoute = require('./routes/auth.js')(app, passport);
 
 //load passport strategies
 require('./config/passport/passport.js')(passport, db.user);
-
 
 //Sync Database
 // models.sequelize
