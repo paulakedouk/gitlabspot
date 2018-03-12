@@ -16,6 +16,7 @@ var port = process.env.PORT || 8080;
 //For BodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
 app.use(express.static('public'));
 
 // For Passport
@@ -35,7 +36,7 @@ app.use(passport.session()); // persistent login sessions
 
 var exphbs = require('express-handlebars');
 app.engine('handlebars', exphbs({
-    defaultLayout: 'main'
+  defaultLayout: 'main'
 }));
 app.set('view engine', 'handlebars');
 

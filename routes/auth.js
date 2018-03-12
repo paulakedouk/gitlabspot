@@ -3,23 +3,21 @@ var authController = require('../controllers/authcontroller.js');
 var passport = require('passport');
 //added passport to the parameter(not in tutorial)
 module.exports = function (app) {
-  app.get('/signup', authController.signup);
-  app.get('/signin', authController.signin);
-  // app.get('/dashboard', isLoggedIn, authController.dashboard);
-  app.get('/logout', authController.logout);
+  // app.get('/signup', authController.signup);
+  // app.get('/signin', authController.signin);
+  // // app.get('/dashboard', isLoggedIn, authController.dashboard);
+  // app.get('/logout', authController.logout);
 
-  app.get("/", function (req, res) {
-    hndlbObj = {
-      test: "this is a test"
-    }
-    res.render("index", hndlbObj)
+  app.get("/signin", function (req, res) {
+    res.render("signin")
+  })
+
+  app.get("/signup", function (req, res) {
+    res.render("signup")
   })
 
   app.get("/dashboard", function (req, res) {
-    hndlbObj = {
-      name: "Amber"
-    }
-    res.render("dashboard", hndlbObj)
+    res.render("dashboard")
   })
 
   app.post(
