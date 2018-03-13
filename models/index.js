@@ -8,6 +8,21 @@ var config = require('../config/config.json')[env];
 var sequelize = new Sequelize(config.database, config.username, config.password, config);
 var db = {};
 
+if (process.env.JAWSDB_URL) {
+   var sequelize = new Sequelize(process.env.JAWSDB_URL);
+} else {
+   if (process.env.LOCALDB_URL) {
+       var sequelize = new Sequelize(process.env.LOCALDB_URL);
+   } else {
+
+       if (config.use_env_variable) {
+           var sequelize = new Sequelize(process.env[config.use_env_variable], config);
+       } else {
+           var sequelize = new Sequelize(config.database, config.username, config.password, config);
+       }
+   }
+}
+
 fs
   .readdirSync(__dirname)
   .filter(function(file) {
