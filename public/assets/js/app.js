@@ -15,6 +15,7 @@ $(function () {
 			console.log('newPost: ', newPost)
 			console.log('data: ', data)
 			alert("Post created!");
+			window.location.reload();
 		})
 	});
 
