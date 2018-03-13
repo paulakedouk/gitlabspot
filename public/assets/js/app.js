@@ -2,7 +2,7 @@
 $(function () {
 	$(".post-form").on("submit", function (event) {
 		event.preventDefault()
-		var userName = $(this).attr("data-user");
+		var userName = $("#data-user").text();
 
 		var newPost = {
 			title: $("#post-title").val().trim(),
