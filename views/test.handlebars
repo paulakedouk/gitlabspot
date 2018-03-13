@@ -7,7 +7,7 @@
             </a>
             Create a new post</h1>
     </div>
-    <form class="post-form">
+    <form class="post-form" action="/category/{{week}}/{{subject}}/" method="POST">
         <div class="form-group row">
             <label for="post-title" class="col-sm-2 col-form-label">Title</label>
             <div class="col-sm-10">
@@ -48,3 +48,25 @@
         <button data-user={{ user.username }} id="create-submit-btn" class="col-md-12 btn btn-pages btn-block create-submit" type="submit">Create</button>
     </form>
 </div>
+
+<script>
+    document.getElementById("create-submit-btn").addEventListener("click", function (event) {
+        event.preventDefault()
+        var userName = $(this).attr("data-user");
+
+        var newPost = {
+            title: $("#post-title").val().trim(),
+            body: $("#post-body").val().trim(),
+            category: $("#post-category").val(),
+            username: userName,
+        }
+
+        $.post("/api/create/post", newPost)
+            .then(function () {
+                alert('Post created!')
+                location.reload('/dashboard');
+            });
+
+
+    })
+</script>
