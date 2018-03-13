@@ -36,15 +36,16 @@ module.exports = function (app) {
         }
       ],
       order: [['updatedAt', 'DESC']]
-    }).then(function(data) {
-    	res.render("category", { posts: data })		
-    }) 	
-})
-  
+    }).then(function (data) {
+      res.render("category", { posts: data })
+    })
+  })
+
 
   app.get("/category/:week/:subject/:post", function (req, res) {
     var page = `${req.params.week}${req.params.subject}${req.params.post}`
- 	db.Post.findOne({where: {
+    db.Post.findOne({
+      where: {
         id: req.params.post
       },
       include: [
@@ -53,9 +54,9 @@ module.exports = function (app) {
         }
       ]
     }).then(function (data) {
-    	console.log(data);
-    res.render(page, data);
-	})
+      console.log(data);
+      res.render(page, data);
+    })
   })
 
 
