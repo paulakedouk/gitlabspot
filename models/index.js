@@ -9,31 +9,32 @@ var sequelize = new Sequelize(config.database, config.username, config.password,
 var db = {};
 
 if (process.env.JAWSDB_URL) {
-   var sequelize = new Sequelize(process.env.JAWSDB_URL);
-} else {
-   if (process.env.LOCALDB_URL) {
-       var sequelize = new Sequelize(process.env.LOCALDB_URL);
-   } else {
 
-       if (config.use_env_variable) {
-           var sequelize = new Sequelize(process.env[config.use_env_variable], config);
-       } else {
-           var sequelize = new Sequelize(config.database, config.username, config.password, config);
-       }
-   }
+  var sequelize = new Sequelize(process.env.JAWSDB_URL);
+} else {
+  if (process.env.LOCALDB_URL) {
+    var sequelize = new Sequelize(process.env.LOCALDB_URL);
+  } else {
+
+    if (config.use_env_variable) {
+      var sequelize = new Sequelize(process.env[config.use_env_variable], config);
+    } else {
+      var sequelize = new Sequelize(config.database, config.username, config.password, config);
+    }
+  }
 }
 
 fs
   .readdirSync(__dirname)
-  .filter(function(file) {
+  .filter(function (file) {
     return file.indexOf('.') !== 0 && file !== 'index.js';
   })
-  .forEach(function(file) {
+  .forEach(function (file) {
     var model = sequelize.import(path.join(__dirname, file));
     db[model.name] = model;
   });
 
-Object.keys(db).forEach(function(modelName) {
+Object.keys(db).forEach(function (modelName) {
   if ('associate' in db[modelName]) {
     db[modelName].associate(db);
   }
@@ -41,5 +42,6 @@ Object.keys(db).forEach(function(modelName) {
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+
 
 module.exports = db;

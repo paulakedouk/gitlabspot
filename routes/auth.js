@@ -36,23 +36,29 @@ module.exports = function (app) {
         }
       ],
       order: [['updatedAt', 'DESC']]
-    }).then(function(data) {
-    	res.render("category", { posts: data })		
-    }) 	
-})
-  
+    }).then(function (data) {
+      res.render("category", { posts: data })
+    })
+  })
+
 
   app.get("/category/:week/:subject/:post", function (req, res) {
     var page = `${req.params.week}${req.params.subject}${req.params.post}`
-    var props = {
-      title: req.title,
-      body: req.body,
-      category: req.category,
-      username: req.user
-    }
-
-    res.render(page, props)
+    db.Post.findOne({
+      where: {
+        id: req.params.post
+      },
+      include: [
+        {
+          model: db.Comment
+        }
+      ]
+    }).then(function (data) {
+      console.log(data);
+      res.render(page, data);
+    })
   })
+
 
   app.post(
     '/signup',
