@@ -9,6 +9,7 @@ var sequelize = new Sequelize(config.database, config.username, config.password,
 var db = {};
 
 if (process.env.JAWSDB_URL) {
+
   var sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
   if (process.env.LOCALDB_URL) {
@@ -22,6 +23,7 @@ if (process.env.JAWSDB_URL) {
     }
   }
 }
+
 fs
   .readdirSync(__dirname)
   .filter(function (file) {
