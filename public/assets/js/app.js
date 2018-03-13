@@ -1,6 +1,6 @@
 
 $(function () {
-	$("#create-submit-btn").on("submit", function (event) {
+	$(".post-form").on("submit", function (event) {
 		event.preventDefault()
 		var userName = $(this).attr("data-user");
 
