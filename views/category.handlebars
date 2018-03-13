@@ -10,25 +10,15 @@
                     Posts</h1>
             </div>
 
-            {{#each posts}}
+           
             <ul>
+                 {{#each posts}}
                 <li>
-                    <a data-post href="/category/{{week}}/{{subject}}/1">Post 1</a>
+                    <a data-post href="/category/{{category}}/{{id}}/1">{{title}}</a>
                 </li>
-                <li>
-                    <a href="/category/{{week}}/{{subject}}/2">Post 2</a>
-                </li>
-                <li>
-                    <a href="/category/{{week}}/{{subject}}/3">Post 3</a>
-                </li>
-                <li>
-                    <a href="/category/{{week}}/{{subject}}/4">Post 4</a>
-                </li>
-                <li>
-                    <a data-post href="/category/{{week}}/{{subject}}/5">{{this.post.title}}</a>
-                </li>
+                 {{/each}}
             </ul>
-            {{/each}}
+           
         </div>
     </div>
 </div>

@@ -3,6 +3,8 @@ var authController = require('../controllers/authcontroller.js');
 var passport = require('passport');
 //added passport to the parameter(not in tutorial)
 
+var db = require('../models');
+
 module.exports = function (app) {
   app.get('/logout', authController.logout);
 
@@ -24,15 +26,21 @@ module.exports = function (app) {
   })
 
   app.get("/category/:week/:subject", function (req, res) {
-    var props = {
-      week: req.params.week,
-      subject: req.params.subject,
-      user: req.user
-    }
-    app.get("/api/category/" + props.subject, function(data) {
-    	res.render("category", { posts: data })	
-    })
-  })
+    db.Post.findAll({
+      where: {
+        category: req.params.subject
+      },
+      include: [
+        {
+          model: db.Comment
+        }
+      ],
+      order: [['updatedAt', 'DESC']]
+    }).then(function(data) {
+    	res.render("category", { posts: data })		
+    }) 	
+})
+  
 
   app.get("/category/:week/:subject/:post", function (req, res) {
     var page = `${req.params.week}${req.params.subject}${req.params.post}`
