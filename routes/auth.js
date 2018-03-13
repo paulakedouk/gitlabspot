@@ -29,7 +29,9 @@ module.exports = function (app) {
       subject: req.params.subject,
       user: req.user
     }
-    res.render("category", props)
+    app.get("/api/category/" + props.subject, function(data) {
+    	res.render("category", { posts: data })	
+    })
   })
 
   app.get("/category/:week/:subject/:post", function (req, res) {
