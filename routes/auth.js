@@ -24,7 +24,7 @@ module.exports = function (app) {
   })
 
   app.get("/dashboard", isLoggedIn, function (req, res) {
-    res.render("dashboard")
+    res.render("dashboard", {user: req.user})
   })
 
   app.get("/create-post", isLoggedIn, function (req, res) {
@@ -62,7 +62,9 @@ module.exports = function (app) {
     })
   );
 
-
+  app.get("/create-post", isLoggedIn, function (req, res) {
+    res.render("create-post")
+  })
 };
 
 
