@@ -27,6 +27,23 @@ module.exports = function (app) {
     res.render("dashboard", {user: req.user})
   })
 
+  app.get("/create-post", isLoggedIn, function (req, res) {
+    res.render("create-post")
+  })
+
+  app.get("/category/:week/:subject", function (req, res) {
+    var props = {
+      week: req.params.week,
+      subject: req.params.subject
+    }
+    res.render("category", props)
+  })
+
+  app.get("/category/:week/:subject/:post", function (req, res) {
+    var page = `${req.params.week}${req.params.subject}${req.params.post}`
+    res.render(page)
+  })
+
   app.post(
     '/signup',
     passport.authenticate('local-signup', {
@@ -44,7 +61,11 @@ module.exports = function (app) {
       failureRedirect: '/signin'
     })
   );
+
   app.get("/create-post", isLoggedIn, function (req, res) {
     res.render("create-post")
   })
 };
+
+
+
