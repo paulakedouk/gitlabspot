@@ -9,6 +9,8 @@
                     </a>
                     Posts</h1>
             </div>
+
+            {{#each posts}}
             <ul>
                 <li>
                     <a data-post href="/category/{{week}}/{{subject}}/1">Post 1</a>
@@ -22,7 +24,11 @@
                 <li>
                     <a href="/category/{{week}}/{{subject}}/4">Post 4</a>
                 </li>
+                <li>
+                    <a data-post href="/category/{{week}}/{{subject}}/5">{{this.post.title}}</a>
+                </li>
             </ul>
+            {{/each}}
         </div>
     </div>
 </div>

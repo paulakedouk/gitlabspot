@@ -34,8 +34,14 @@ module.exports = function (app) {
 
   app.get("/category/:week/:subject/:post", function (req, res) {
     var page = `${req.params.week}${req.params.subject}${req.params.post}`
+    var props = {
+      title: req.title,
+      body: req.body,
+      category: req.category,
+      username: req.user
+    }
 
-    res.render(page, { user: req.user })
+    res.render(page, props)
   })
 
   app.post(
@@ -57,7 +63,12 @@ module.exports = function (app) {
   );
 
   app.get("/create-post", isLoggedIn, function (req, res) {
-    res.render("create-post", { user: req.user })
+    var props = {
+      user: req.user,
+      // post: res.query
+    }
+    // console.log(res)
+    res.render("create-post", props)
   })
 };
 
