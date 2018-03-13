@@ -8,6 +8,7 @@ body {
 a,
 a:hover {
   color: #00bcd4;
+  text-decoration: none;
 }
 
 input,
