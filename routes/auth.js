@@ -24,7 +24,7 @@ module.exports = function (app) {
   })
 
   app.get("/dashboard", isLoggedIn, function (req, res) {
-    res.render("dashboard")
+    res.render("dashboard", {user: req.user})
   })
 
   app.post(
@@ -44,4 +44,7 @@ module.exports = function (app) {
       failureRedirect: '/signin'
     })
   );
+  app.get("/create-post", isLoggedIn, function (req, res) {
+    res.render("create-post")
+  })
 };
