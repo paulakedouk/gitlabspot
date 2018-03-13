@@ -24,10 +24,10 @@
             <div class="col-lg-12">
 
                 <!-- Title -->
-                <h1 class="post-title">{{Post.title}}</h1>
+                <h1 class="post-title">{{this.dataValues.title}}</h1>
 
                 <!-- Username -->
-                <p>by {{user.username}}
+                <p>by {{this.dataValues.username}}
                 </p>
                 <!-- Date/Time -->
                 <h3 class="post-date">Posted on January 1, 2018 at 12:00 PM</h3>
@@ -35,7 +35,7 @@
                 <hr>
 
                 <!-- Post Content -->
-                <p>{{Post.content}}</p>
+                <p>{{this.dataValues.body}}</p>
 
                 {{!--
                 <blockquote class="blockquote">
