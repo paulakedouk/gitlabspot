@@ -45,9 +45,13 @@
                 </select>
             </div>
         </div>
-
-        <button class="col-md-12 btn btn-pages btn-block create-submit" type="submit">Create</button>
-
+        <button id="create-submit-btn" class="col-md-12 btn btn-pages btn-block create-submit" type="submit">Create</button>
     </form>
-
 </div>
+<script>
+    document.getElementById("create-submit-btn").addEventListener("click", function (event) {
+        event.preventDefault()
+
+
+    });
+</script>

@@ -4,14 +4,10 @@ var passport = require('passport');
 //added passport to the parameter(not in tutorial)
 
 module.exports = function (app) {
-  // app.get('/signup', authController.signup);
-  // app.get('/signin', authController.signin);
-  // // app.get('/dashboard', isLoggedIn, authController.dashboard);
   app.get('/logout', authController.logout);
 
   function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) return next();
-
     res.redirect('/signin');
   }
 
@@ -24,24 +20,22 @@ module.exports = function (app) {
   })
 
   app.get("/dashboard", isLoggedIn, function (req, res) {
-    res.render("dashboard", {user: req.user})
-  })
-
-  app.get("/create-post", isLoggedIn, function (req, res) {
-    res.render("create-post")
+    res.render("dashboard", { user: req.user })
   })
 
   app.get("/category/:week/:subject", function (req, res) {
     var props = {
       week: req.params.week,
-      subject: req.params.subject
+      subject: req.params.subject,
+      user: req.user
     }
     res.render("category", props)
   })
 
   app.get("/category/:week/:subject/:post", function (req, res) {
     var page = `${req.params.week}${req.params.subject}${req.params.post}`
-    res.render(page)
+
+    res.render(page, { user: req.user })
   })
 
   app.post(
@@ -63,7 +57,7 @@ module.exports = function (app) {
   );
 
   app.get("/create-post", isLoggedIn, function (req, res) {
-    res.render("create-post")
+    res.render("create-post", { user: req.user })
   })
 };
 
