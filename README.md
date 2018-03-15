@@ -2,6 +2,8 @@
 
 GitLabSpot is an application where users can post questions, tips, or comments about the various topics covered in UC Berkeley’s coding Bootcamp. 
 
+<img src="public/assets/images/gitlabspot.gif" />
+
 ## Motivation
 
 Our vision for GitLabSpot is a website where people taking the coding bootcamp can go to find help with the topics. We eventually envision students posting questions or tips regarding hw or other class exercises and other students being able to comment to assist. 
